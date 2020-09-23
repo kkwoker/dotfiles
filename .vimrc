@@ -10,12 +10,15 @@ Plug 'sheerun/vim-polyglot'                                 " Collection of lang
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'rrethy/vim-illuminate'                                " Highlights current word
-Plug 'davidhalter/jedi-vim'                                 " Autocompletes and goto definitions
 Plug 'dense-analysis/ale'                                   " Ale linting autofixing
 Plug 'airblade/vim-gitgutter'                               " Git gutters
 Plug 'tpope/vim-fugitive'                                   " Git blame + more
+Plug 'embark-theme/vim', { 'as': 'embark' }
 
 call plug#end()
+
+colorscheme embark
+"let g:embark_terminal_italics = 1
 
 " FUNCTIONS
 
@@ -29,6 +32,7 @@ syntax enable                                               " Enable Syntax High
 set number                                                  " Enable absolute line numbers
 set ruler                                                   " Show the line and column number of the cursor position
 set list                                                    " Show invisible characters
+set linebreak                                               " Wrap long lines at a character in 'breakat' rather than at the last character that fits on the screen
 " List chars
 set listchars=""                                            " Reset the listchars
 set listchars=tab:\ \                                       " a tab should display as "  ", trailing whitespace as "."
@@ -82,8 +86,9 @@ set shiftwidth=2                                            " Using >> or 'o' or
 
 set autoindent                                              " Newlines will have the same indentation as previous line
 
-autocmd FileType python set tabstop=4|set shiftwidth=4|set softtabstop=4|set expandtab
 autocmd FileType javascript set tabstop=2|set shiftwidth=2|set softtabstop=2|set expandtab
+autocmd FileType javascriptreact set tabstop=2|set shiftwidth=2|set softtabstop=2|set expandtab
+autocmd FileType python set tabstop=4|set shiftwidth=4|set softtabstop=4|set expandtab
 
 
 " Folding
