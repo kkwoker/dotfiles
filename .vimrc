@@ -13,7 +13,9 @@ Plug 'rrethy/vim-illuminate'                                " Highlights current
 Plug 'dense-analysis/ale'                                   " Ale linting autofixing
 Plug 'airblade/vim-gitgutter'                               " Git gutters
 Plug 'tpope/vim-fugitive'                                   " Git blame + more
-Plug 'embark-theme/vim', { 'as': 'embark' }
+Plug 'embark-theme/vim', { 'as': 'embark' }                 " color theme
+Plug 'wfxr/minimap.vim'                                     " Vim minimap
+Plug 'ervandew/supertab'
 
 call plug#end()
 
@@ -147,6 +149,9 @@ let g:ale_fix_on_save = 1
 let g:ale_cache_executable_check_failures = 1
 let g:ale_lint_delay=0
 
+let g:ale_linter_aliases = {'typescriptreact': 'typescript'}
+set redrawtime=10000
+
 " Git Gutter
 set updatetime=250
 let g:gitgutter_max_signs = 500
@@ -167,4 +172,6 @@ nmap <leader>gd :Gdiff<cr>
 nmap <leader>gl :Glog<cr>
 nmap <leader>gc :Gcommit<cr>
 
+
+let g:minimap_auto_start=1
 
